@@ -1,0 +1,1663 @@
+{
+  "id": "IAMCCS_SHEETBUILDER_FRAMEV2_IDEOGRAM_CROP_SAVE_SEEDVR_2x3_NOPAID",
+  "revision": 4,
+  "last_node_id": 6100,
+  "last_link_id": 329,
+  "nodes": [
+    {
+      "id": 6091,
+      "type": "EmptyLatentImage",
+      "pos": [
+        2667.617793040118,
+        303.51783159346763
+      ],
+      "size": [
+        260,
+        120
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 303
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 304
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            305
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1536,
+        864,
+        1
+      ]
+    },
+    {
+      "id": 161,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        2977.040829327442,
+        167.31135687336382
+      ],
+      "size": [
+        290,
+        170
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 227
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 254
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 228
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 306
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 305
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            231
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "SamplerCustomAdvanced",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 162,
+      "type": "VAEDecode",
+      "pos": [
+        3046.2536764357606,
+        445.2837542613308
+      ],
+      "size": [
+        230,
+        100
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 231
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 232
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            281
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 164,
+      "type": "Ideogram4Scheduler",
+      "pos": [
+        2659.772384460115,
+        506.60965999341187
+      ],
+      "size": [
+        270,
+        240
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 233
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            306
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "Ideogram4Scheduler",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        20,
+        1536,
+        864,
+        0,
+        1.75
+      ]
+    },
+    {
+      "id": 163,
+      "type": "KSamplerSelect",
+      "pos": [
+        2622.5436223923484,
+        138.88242840849693
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            228
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "KSamplerSelect",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "res_multistep"
+      ]
+    },
+    {
+      "id": 188,
+      "type": "UNETLoader",
+      "pos": [
+        3340.1321620376407,
+        189.4709067995916
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            260
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "ideogram\\diffusion_models\\ideogram4_fp8_scaled.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 181,
+      "type": "CFGOverride",
+      "pos": [
+        3727.3324895466267,
+        173.0828171716803
+      ],
+      "size": [
+        260,
+        170
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 260
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            257
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "CFGOverride",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        3,
+        0.9,
+        1
+      ]
+    },
+    {
+      "id": 180,
+      "type": "DualModelGuider",
+      "pos": [
+        3773.2783403545536,
+        436.55935456358833
+      ],
+      "size": [
+        270,
+        180
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 257
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 316
+        },
+        {
+          "name": "model_negative",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 261
+        },
+        {
+          "name": "negative",
+          "shape": 7,
+          "type": "CONDITIONING",
+          "link": 253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            254
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "DualModelGuider",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        7
+      ]
+    },
+    {
+      "id": 189,
+      "type": "UNETLoader",
+      "pos": [
+        3344.3090575656365,
+        590.4655041312244
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            261
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "ideogram\\diffusion_models\\ideogram4_unconditional_fp8_scaled.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 170,
+      "type": "PrimitiveInt",
+      "pos": [
+        3661.7531176931407,
+        678.414936299999
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 318
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            237
+          ]
+        }
+      ],
+      "title": "Int (Height)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "PrimitiveInt",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        1024,
+        "fixed"
+      ]
+    },
+    {
+      "id": 169,
+      "type": "PrimitiveInt",
+      "pos": [
+        3653.3993266371517,
+        733.7958019520217
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 319
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            236
+          ]
+        }
+      ],
+      "title": "Int (Width)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "PrimitiveInt",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        1024,
+        "fixed"
+      ]
+    },
+    {
+      "id": 171,
+      "type": "ComfyMathExpression",
+      "pos": [
+        3052.074370230523,
+        644.9997720760507
+      ],
+      "size": [
+        230,
+        74
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "a",
+          "name": "values.a",
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": 236
+        },
+        {
+          "label": "b",
+          "name": "values.b",
+          "shape": 7,
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            233,
+            303
+          ]
+        },
+        {
+          "name": "BOOL",
+          "type": "BOOLEAN",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "ComfyMathExpression",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "max(((a + 15) // 16) * 16, 256)"
+      ]
+    },
+    {
+      "id": 172,
+      "type": "ComfyMathExpression",
+      "pos": [
+        3064.6050568145056,
+        719.1766676040445
+      ],
+      "size": [
+        230,
+        74
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "a",
+          "name": "values.a",
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": 237
+        },
+        {
+          "label": "b",
+          "name": "values.b",
+          "shape": 7,
+          "type": "FLOAT,INT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            234,
+            304
+          ]
+        },
+        {
+          "name": "BOOL",
+          "type": "BOOLEAN",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.23.0",
+        "Node name for S&R": "ComfyMathExpression",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "max(((a + 15) // 16) * 16, 256)"
+      ]
+    },
+    {
+      "id": 158,
+      "type": "VAELoader",
+      "pos": [
+        3837.1827298688663,
+        681.4979813956279
+      ],
+      "size": [
+        283.27927579593234,
+        66.06571195198376
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            232
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "VAELoader",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65,
+        "models": [
+          {
+            "name": "flux2-vae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": 165,
+      "type": "RandomNoise",
+      "pos": [
+        4010.9073502590927,
+        193.87075325901014
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            227
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "RandomNoise",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        113910166786775,
+        "randomize"
+      ]
+    },
+    {
+      "id": 190,
+      "type": "CLIPLoader",
+      "pos": [
+        -389.718693719659,
+        258.11146648013704
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            321
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "text_encoders\\qwen3vl_8b_fp8_scaled.safetensors",
+        "ideogram4",
+        "default"
+      ]
+    },
+    {
+      "id": 159,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        3356.476222376152,
+        467.2902031333473
+      ],
+      "size": [
+        250,
+        80
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 317
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            253
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.9.1",
+        "Node name for S&R": "ConditioningZeroOut",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6092,
+      "type": "MarkdownNote",
+      "pos": [
+        264.7284140849091,
+        -72.52677260176134
+      ],
+      "size": [
+        458.8058130759782,
+        99.3913227799747
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "STEP 1 - USER",
+      "properties": {
+        "Node name for S&R": "MarkdownNote"
+      },
+      "widgets_values": [
+        "1. Open FrameDesigner V2.\n2. Use Import Preset Gallery / Import Style / Import Grid if needed.\n3. Click the lens button beside any text box to write in a large overlay.\n4. Press Apply before queue."
+      ],
+      "color": "#222",
+      "bgcolor": "#111"
+    },
+    {
+      "id": 6098,
+      "type": "IAMCCS_IdeoInfo",
+      "pos": [
+        2082.227767599868,
+        180.9096596168413
+      ],
+      "size": [
+        233.009765625,
+        426
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IDEO_LINX",
+          "type": "IDEO_LINX",
+          "link": 322
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            316,
+            317
+          ]
+        },
+        {
+          "name": "prompt_json",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            319
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            318
+          ]
+        },
+        {
+          "name": "i2i_canvas_image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "i2i_enabled",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "name": "i2i_denoise",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "low_sigma_start_step",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "i2i_report",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "reference_noise_mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "target_x",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "target_y",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "target_width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "target_height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "reference_mode",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "bboxes",
+          "type": "BOUNDING_BOX",
+          "links": []
+        },
+        {
+          "name": "gemma_json_request",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "target_panel_width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "target_panel_height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "paint_mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "debug_report",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "IAMCCS/IAMCCS-nodes",
+        "ver": "3f325265de9823b1a25505ab8610cef4d4d07d79",
+        "Node name for S&R": "IAMCCS_IdeoInfo"
+      },
+      "widgets_values": [],
+      "shape": 1
+    },
+    {
+      "id": 6032,
+      "type": "SaveImage",
+      "pos": [
+        2162.9875817267057,
+        996.5633387186906
+      ],
+      "size": [
+        2181.5843305462645,
+        1268.3504419043086
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 281
+        }
+      ],
+      "outputs": [],
+      "title": "STEP 3 - Save generated full Ideogram sheet",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.24.0",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "IAMCCS/sheet_framev2_ideogram/source_sheet"
+      ]
+    },
+    {
+      "id": 6100,
+      "type": "Label (rgthree)",
+      "pos": [
+        2825.3937166466503,
+        -355.92735482979754
+      ],
+      "size": [
+        1945.1171875,
+        200
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "patreon.com/IAMCCS",
+      "properties": {
+        "fontSize": 200,
+        "fontFamily": "Arial",
+        "fontColor": "red",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 198,
+      "type": "Label (rgthree)",
+      "pos": [
+        -743.9102589751118,
+        -612.9442929776942
+      ],
+      "size": [
+        7850.390625,
+        200
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "IAMCCS_STORYBOARD_BUILDER (FRAME DESIGNER V2) - simple version - 190626",
+      "properties": {
+        "fontSize": 200,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 6099,
+      "type": "IAMCCS_StoryboardFrameDesignerV2",
+      "pos": [
+        7.307932938645939,
+        190.1180971223066
+      ],
+      "size": [
+        1960,
+        1340
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 321
+        },
+        {
+          "name": "ideoboard",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "source_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IDEO_LINX",
+          "type": "IDEO_LINX",
+          "links": [
+            322
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "IAMCCS/IAMCCS-nodes",
+        "ver": "3f325265de9823b1a25505ab8610cef4d4d07d79",
+        "Node name for S&R": "IAMCCS_StoryboardFrameDesignerV2"
+      },
+      "widgets_values": [
+        "{\n  \"schema\": \"iamccs.ideogram_storyboard_frame_designer\",\n  \"schema_version\": 1,\n  \"preset_key\": \"\",\n  \"workflow_mode\": \"single_image\",\n  \"grid_key\": \"free_canvas\",\n  \"__iamccs_user_applied_preset\": false,\n  \"target_resolution_key\": \"hd_720\",\n  \"json_export_mode\": \"json_perfect\",\n  \"brief_to_json\": {\n    \"brief\": \"\",\n    \"instruction\": \"Enhance the current Ideogram JSON without changing layout, bbox coordinates, visible text, or panel count.\"\n  },\n  \"gemma_assistant\": {\n    \"enabled\": false,\n    \"provider\": \"local_gemma\",\n    \"mode\": \"full_json_enhance\",\n    \"speed\": \"fast\",\n    \"model\": \"text_encoders\\\\gemma4_e4b_it_fp8_scaled.safetensors\",\n    \"selected_id\": \"\",\n    \"target_field\": \"\",\n    \"current_text\": \"\",\n    \"brief\": \"\",\n    \"request_ready\": false\n  },\n  \"mask_paint\": {\n    \"brush_size\": 48,\n    \"strokes\": []\n  },\n  \"canvas\": {\n    \"width\": 1280,\n    \"height\": 720,\n    \"aspect_label\": \"Empty single canvas / 1280 x 720 - HD 16:9\",\n    \"target_resolution_key\": \"hd_720\",\n    \"target_width\": 1280,\n    \"target_height\": 720\n  },\n  \"scene\": {\n    \"high_level_description\": \"\",\n    \"aesthetics\": \"\",\n    \"lighting\": \"\",\n    \"photo\": \"\",\n    \"medium\": \"photograph\",\n    \"art_style\": \"\",\n    \"color_palette\": [\n      \"#101014\",\n      \"#2E3438\",\n      \"#7A6A58\",\n      \"#D6C7AA\",\n      \"#8C3F2E\"\n    ],\n    \"background\": \"\"\n  },\n  \"i2i\": {\n    \"enabled\": false,\n    \"denoise\": 0.28,\n    \"low_sigma_start_step\": 12,\n    \"scheduler_hint\": \"Use SplitSigmasDenoise for denoise or split high/low sigmas by step for advanced i2i.\",\n    \"source_mode\": \"canvas_composite\"\n  },\n  \"reference_mode\": {\n    \"mode\": \"single\",\n    \"label\": \"Single\",\n    \"panel_count\": 1,\n    \"target_index\": 0,\n    \"locked_indices\": []\n  },\n  \"direct_prompt\": {\n    \"enabled\": false,\n    \"text\": \"\"\n  },\n  \"json_override\": {\n    \"enabled\": false,\n    \"text\": \"\"\n  },\n  \"items\": []\n}",
+        "__manual_import__",
+        false,
+        0.28,
+        12,
+        ""
+      ],
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      227,
+      165,
+      0,
+      161,
+      0,
+      "NOISE"
+    ],
+    [
+      228,
+      163,
+      0,
+      161,
+      2,
+      "SAMPLER"
+    ],
+    [
+      231,
+      161,
+      0,
+      162,
+      0,
+      "LATENT"
+    ],
+    [
+      232,
+      158,
+      0,
+      162,
+      1,
+      "VAE"
+    ],
+    [
+      233,
+      171,
+      1,
+      164,
+      0,
+      "INT"
+    ],
+    [
+      234,
+      172,
+      1,
+      164,
+      1,
+      "INT"
+    ],
+    [
+      236,
+      169,
+      0,
+      171,
+      0,
+      "INT"
+    ],
+    [
+      237,
+      170,
+      0,
+      172,
+      0,
+      "INT"
+    ],
+    [
+      253,
+      159,
+      0,
+      180,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      254,
+      180,
+      0,
+      161,
+      1,
+      "GUIDER"
+    ],
+    [
+      257,
+      181,
+      0,
+      180,
+      0,
+      "MODEL"
+    ],
+    [
+      260,
+      188,
+      0,
+      181,
+      0,
+      "MODEL"
+    ],
+    [
+      261,
+      189,
+      0,
+      180,
+      2,
+      "MODEL"
+    ],
+    [
+      281,
+      162,
+      0,
+      6032,
+      0,
+      "IMAGE"
+    ],
+    [
+      303,
+      171,
+      1,
+      6091,
+      0,
+      "INT"
+    ],
+    [
+      304,
+      172,
+      1,
+      6091,
+      1,
+      "INT"
+    ],
+    [
+      305,
+      6091,
+      0,
+      161,
+      4,
+      "LATENT"
+    ],
+    [
+      306,
+      164,
+      0,
+      161,
+      3,
+      "SIGMAS"
+    ],
+    [
+      316,
+      6098,
+      0,
+      180,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      317,
+      6098,
+      0,
+      159,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      318,
+      6098,
+      3,
+      170,
+      0,
+      "INT"
+    ],
+    [
+      319,
+      6098,
+      2,
+      169,
+      0,
+      "INT"
+    ],
+    [
+      321,
+      190,
+      0,
+      6099,
+      0,
+      "CLIP"
+    ],
+    [
+      322,
+      6099,
+      0,
+      6098,
+      0,
+      "IDEO_LINX"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 101,
+      "title": "STEP 1 - WRITE: FrameDesigner V2 source, import presets, lens overlay editor",
+      "bounding": [
+        40,
+        80,
+        1953.8079191008046,
+        1479.2007157252783
+      ],
+      "color": "#1E7E34",
+      "flags": {}
+    },
+    {
+      "id": 102,
+      "title": "IDEO_INFO_OUTPUT",
+      "bounding": [
+        2040,
+        80,
+        390.4614580055686,
+        626.6401653363696
+      ],
+      "color": "#1C5D99",
+      "flags": {}
+    },
+    {
+      "id": 103,
+      "title": "STEP 2 - GENERATE: Ideogram creates the full 2x3 storyboard sheet",
+      "bounding": [
+        2587.6177930401177,
+        83.51783159346769,
+        1764.714956028347,
+        749.6314757046493
+      ],
+      "color": "#B86218",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "ds": {
+      "scale": 0.637315437304903,
+      "offset": [
+        363.36222008271494,
+        186.3002224963563
+      ]
+    },
+    "iamccs_annotations_multi": {
+      "version": 2,
+      "graphs": {
+        "d5210e37-abe2-413b-bb6a-1b8d4c7375f8": {
+          "version": 2,
+          "enabled": false,
+          "color": "#ff4444",
+          "width": 7,
+          "opacity": 1,
+          "eraser": false,
+          "constantScreen": false,
+          "dashed": false,
+          "hidden": false,
+          "penOnly": false,
+          "hiDPIx2": false,
+          "pinMode": false,
+          "tool": "draw",
+          "selectMode": "rect",
+          "transformMode": "fixed",
+          "widthDraw": 7,
+          "widthErase": 48,
+          "opacityDraw": 1,
+          "opacityErase": 1,
+          "textFontFamily": "Arial",
+          "textFontSize": 28,
+          "textColor": "#111111",
+          "textFontWeight": "normal",
+          "textFontStyle": "normal",
+          "textUnderline": false,
+          "paths": [],
+          "layers": [
+            {
+              "name": "Layer 1",
+              "visible": true,
+              "locked": false,
+              "paths": [],
+              "style": {
+                "color": "#ff4444",
+                "dashed": false,
+                "widthDraw": 7,
+                "widthErase": 48,
+                "opacityDraw": 1,
+                "opacityErase": 1
+              }
+            }
+          ],
+          "currentLayerIdx": 0,
+          "stickers": [],
+          "stickerStyle": {
+            "frameColor": "#ffffff",
+            "paddingPx": 10,
+            "borderWidthPx": 2,
+            "shadow": true,
+            "shadowStrength": 12
+          }
+        },
+        "fdcfc2b2-168f-4f3d-a1d0-6986b802fce5": {
+          "version": 2,
+          "enabled": false,
+          "color": "#ff4444",
+          "width": 7,
+          "opacity": 1,
+          "eraser": false,
+          "constantScreen": false,
+          "dashed": false,
+          "hidden": false,
+          "penOnly": false,
+          "hiDPIx2": false,
+          "pinMode": false,
+          "tool": "draw",
+          "selectMode": "rect",
+          "transformMode": "fixed",
+          "widthDraw": 7,
+          "widthErase": 48,
+          "opacityDraw": 1,
+          "opacityErase": 1,
+          "textFontFamily": "Arial",
+          "textFontSize": 28,
+          "textColor": "#111111",
+          "textFontWeight": "normal",
+          "textFontStyle": "normal",
+          "textUnderline": false,
+          "paths": [],
+          "layers": [
+            {
+              "name": "Layer 1",
+              "kind": "draw",
+              "visible": true,
+              "locked": false,
+              "paths": [],
+              "style": {
+                "color": "#ff4444",
+                "dashed": false,
+                "widthDraw": 7,
+                "widthErase": 48,
+                "opacityDraw": 1,
+                "opacityErase": 1
+              }
+            }
+          ],
+          "currentLayerIdx": 0,
+          "stickers": [],
+          "stickerStyle": {
+            "frameColor": "#ffffff",
+            "paddingPx": 10,
+            "borderWidthPx": 2,
+            "shadow": true,
+            "shadowStrength": 12
+          }
+        },
+        "f5f04613-ee09-4cd9-9ada-a880360891d4": {
+          "version": 2,
+          "enabled": false,
+          "color": "#ff4444",
+          "width": 7,
+          "opacity": 1,
+          "eraser": false,
+          "constantScreen": false,
+          "dashed": false,
+          "hidden": false,
+          "penOnly": false,
+          "hiDPIx2": false,
+          "pinMode": false,
+          "tool": "draw",
+          "selectMode": "rect",
+          "transformMode": "fixed",
+          "widthDraw": 7,
+          "widthErase": 48,
+          "opacityDraw": 1,
+          "opacityErase": 1,
+          "textFontFamily": "Arial",
+          "textFontSize": 28,
+          "textColor": "#111111",
+          "textFontWeight": "normal",
+          "textFontStyle": "normal",
+          "textUnderline": false,
+          "paths": [],
+          "layers": [
+            {
+              "name": "Layer 1",
+              "kind": "draw",
+              "visible": true,
+              "locked": false,
+              "paths": [],
+              "style": {
+                "color": "#ff4444",
+                "dashed": false,
+                "widthDraw": 7,
+                "widthErase": 48,
+                "opacityDraw": 1,
+                "opacityErase": 1
+              }
+            }
+          ],
+          "currentLayerIdx": 0,
+          "stickers": [],
+          "stickerStyle": {
+            "frameColor": "#ffffff",
+            "paddingPx": 10,
+            "borderWidthPx": 2,
+            "shadow": true,
+            "shadowStrength": 12
+          }
+        }
+      }
+    },
+    "iamccs_annotations": {
+      "version": 2,
+      "enabled": false,
+      "color": "#ff4444",
+      "width": 7,
+      "opacity": 1,
+      "eraser": false,
+      "constantScreen": false,
+      "dashed": false,
+      "hidden": false,
+      "penOnly": false,
+      "hiDPIx2": false,
+      "pinMode": false,
+      "tool": "draw",
+      "selectMode": "rect",
+      "transformMode": "fixed",
+      "widthDraw": 7,
+      "widthErase": 48,
+      "opacityDraw": 1,
+      "opacityErase": 1,
+      "textFontFamily": "Arial",
+      "textFontSize": 28,
+      "textColor": "#111111",
+      "textFontWeight": "normal",
+      "textFontStyle": "normal",
+      "textUnderline": false,
+      "paths": [],
+      "layers": [
+        {
+          "name": "Layer 1",
+          "kind": "draw",
+          "visible": true,
+          "locked": false,
+          "paths": [],
+          "style": {
+            "color": "#ff4444",
+            "dashed": false,
+            "widthDraw": 7,
+            "widthErase": 48,
+            "opacityDraw": 1,
+            "opacityErase": 1
+          }
+        }
+      ],
+      "currentLayerIdx": 0,
+      "stickers": [],
+      "stickerStyle": {
+        "frameColor": "#ffffff",
+        "paddingPx": 10,
+        "borderWidthPx": 2,
+        "shadow": true,
+        "shadowStrength": 12
+      }
+    }
+  },
+  "version": 0.4
+}
